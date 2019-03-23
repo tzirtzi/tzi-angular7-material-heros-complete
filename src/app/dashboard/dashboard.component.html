@@ -1,13 +1,14 @@
-<span class="mat-h1">Top Heroes</span>
+<section class="mat-typography">
+<h1>Top Heroes</h1>
 <div class="grid grid-pad flex-container">
   <a *ngFor="let hero of heroes" class="col-1-4"
       routerLink="/detail/{{hero.id}}">
     <div class="flex-item">
-      <span class="mat-h4">{{hero.name}}</span>
+      <h4>{{hero.name}}</h4>
     </div>
   </a>
 </div>
-
+</section>
 <app-hero-search></app-hero-search>
 
 
