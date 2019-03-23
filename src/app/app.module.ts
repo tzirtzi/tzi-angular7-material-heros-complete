@@ -1,22 +1,23 @@
-import { NgModule }       from '@angular/core';
-import { BrowserModule }  from '@angular/platform-browser';
-import { FormsModule }    from '@angular/forms';
-import { HttpClientModule }    from '@angular/common/http';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService }  from './in-memory-data.service';
+import { InMemoryDataService } from './in-memory-data.service';
 import { environment } from '../environments/environment';
 
-import { AppRoutingModule }     from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MaterialModule } from './material-module';
 
-
-import { AppComponent }         from './app.component';
-import { DashboardComponent }   from './dashboard/dashboard.component';
-import { HeroDetailComponent }  from './hero-detail/hero-detail.component';
-import { HeroesComponent }      from './heroes/heroes.component';
-import { HeroSearchComponent }  from './hero-search/hero-search.component';
-import { MessagesComponent }    from './messages/messages.component';
+import { AppComponent } from './app.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+import { HeroesComponent } from './heroes/heroes.component';
+import { HeroSearchComponent } from './hero-search/hero-search.component';
+import { MessagesComponent } from './messages/messages.component';
 
 import { Hero2Service } from './hero-v2.service';
 import { DataService } from './data.service';
@@ -34,6 +35,8 @@ import { DataService } from './data.service';
     environment.production ? [] : HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false, delay: 800 }
     ),
+    MaterialModule,
+    BrowserAnimationsModule,
     FlexLayoutModule
   ],
   declarations: [
@@ -44,7 +47,7 @@ import { DataService } from './data.service';
     MessagesComponent,
     HeroSearchComponent
   ],
-  bootstrap: [ AppComponent ],
+  bootstrap: [AppComponent],
   providers: []
 })
 export class AppModule { }
