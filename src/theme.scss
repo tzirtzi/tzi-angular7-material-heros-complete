@@ -20,9 +20,9 @@ $custom-typography: mat-typography-config(
 
 
 // Create your Sass color vars (will be available in all the project)
-// $primary: mat-color($app-primary);
-// $accent: mat-color($app-accent);
-// $warn: mat-color($app-warn);
+$primary: mat-color($app-primary);
+$accent: mat-color($app-accent);
+$warn: mat-color($app-warn);
 
 body { 
   margin: 2em;
@@ -32,6 +32,3 @@ body {
   padding: 30px;
 }
 
-// .active {
-//   color: $primary
-// }
