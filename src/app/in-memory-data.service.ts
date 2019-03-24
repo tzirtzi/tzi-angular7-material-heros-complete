@@ -29,16 +29,16 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 7, name: 'xDynama' },
     ]
 
-    const users_23_grid =[
-      { id: 1, name: 'yMr. Nice' },
-      { id: 2, name: 'yNarco' },
-      { id: 3, name: 'yBombasto' },
-      { id: 4, name: 'yCeleritas' },
-      { id: 5, name: 'yMagneta' },
-      { id: 6, name: 'yRubberMan' },
-      { id: 7, name: 'yDynama' },
+    const heroDetails =[
+      { id: 1, name: 'yMr. Nice', superpower: 'sdfds' },
+      { id: 2, name: 'yNarco', superpower: 'sdfds' },
+      { id: 3, name: 'yBombasto', superpower: 'sdfds' },
+      { id: 4, name: 'yCeleritas', superpower: 'sdfds' },
+      { id: 5, name: 'yMagneta', superpower: 'sdfds' },
+      { id: 6, name: 'yRubberMan', superpower: 'sdfds' },
+      { id: 7, name: 'yDynama', superpower: 'sdfds' },
     ]
-    return {heroes, test2, users_23_grid};
+    return {heroes, test2, heroDetails};
   }
 
   // Overrides the genId method to ensure that a hero always has an id.
@@ -47,7 +47,7 @@ export class InMemoryDataService implements InMemoryDbService {
   // if the heroes array is not empty, the method below returns the highest
   // hero id + 1.
   genId(heroes: Hero[]): number {
-    return heroes.length > 0 ? Math.max(...heroes.map(hero => hero.id)) + 1 : 11;
+    return heroes.length > 0 ? Math.max(...heroes.map(hero => hero.id)) + 1 : 1;
   }
 }
 
