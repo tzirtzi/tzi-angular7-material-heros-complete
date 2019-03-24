@@ -5,7 +5,7 @@
      class="h4"
   > Hero Search </label>
 
-  <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+  <!-- <input #searchBox id="search-box" (input)="search(searchBox.value)" />
 
   <ul class="search-result">
     <li *ngFor="let hero of heroes$ | async" >
@@ -13,7 +13,27 @@
         {{hero.name}}
       </a>
     </li>
-  </ul>
+  </ul> -->
+
+<mat-form-field>
+  <input
+     #searchBox 
+     id="search-box"
+     type="text" matInput 
+     (input)="search(searchBox.value)" 
+     [matAutocomplete]="auto">
+</mat-form-field>
+
+<mat-autocomplete #auto="matAutocomplete">
+  <mat-option *ngFor="let hero of heroes$ | async" 
+    [value]="hero.id">
+    <a routerLink="/detail/{{hero.id}}">
+      {{hero.name}}
+    </a>
+  </mat-option>
+</mat-autocomplete>
+
+
 </div>
 </section>
 

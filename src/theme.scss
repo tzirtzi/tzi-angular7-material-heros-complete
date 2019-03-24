@@ -4,14 +4,13 @@
 @include mat-core();
 
 // Define custom theme colors 
-$app-primary: mat-palette($mat-blue, 600);
+$app-primary: mat-palette($mat-blue-gray, 500);
 $app-accent: mat-palette($mat-red, A200, A100, A400);
 $app-warn: mat-palette($mat-red);
-$app-theme: mat-dark-theme($app-primary, $app-accent, $app-warn);
+$app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
 @include angular-material-theme($app-theme);
  
-// Define a custom typography config that overrides the 
-// font-family as well as the `headlines` and `body-1` levels.
+// Define a custom typography config.
 $custom-typography: mat-typography-config(
   $font-family: 'Open Sans, Arial, sans-serif',
   $headline: mat-typography-level(32px, 48px, 700)

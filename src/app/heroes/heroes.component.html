@@ -1,15 +1,34 @@
 <section class="mat-typography">
 <h2>My Heroes</h2>
-
+<!-- 
 <div>
   <label>Hero name:
     <input #heroName />
-  </label>
-  <!-- (click) passes input value to add() and then clears the input -->
-  <button (click)="add(heroName.value); heroName.value=''">
+  </label> 
+    <button 
+    (click)="add(heroName.value); heroName.value=''">
     add
   </button>
-</div>
+  </div>
+  -->
+  <!-- (click) passes input value to add() and then clears the input -->
+  <mat-card class="example-card">
+    <mat-card-header>
+    <!-- <mat-card-title>Hero registration service!!</mat-card-title>
+    <mat-card-subtitle>...just enter thy name!</mat-card-subtitle> -->
+  </mat-card-header>
+  <mat-form-field>
+    <input matInput #heroName />
+    <mat-hint>Just enter hero name...!</mat-hint>
+  </mat-form-field>
+  <button 
+    mat-button
+    color="accent"
+    (click)="add(heroName.value); heroName.value=''">
+    add
+  </button>
+  </mat-card>
+
 
 <ul class="heroes">
   <li *ngFor="let hero of heroes">
