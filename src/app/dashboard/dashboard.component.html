@@ -1,13 +1,36 @@
 <section class="mat-typography">
-<h1>Top Heroes</h1>
-<div class="grid grid-pad flex-container">
-  <a *ngFor="let hero of heroes" class="col-1-4"
-      routerLink="/detail/{{hero.id}}">
-    <div class="flex-item">
-      <h4>{{hero.name}}</h4>
-    </div>
-  </a>
-</div>
+
+<mat-card >
+  <mat-list>
+    <mat-list-item>
+      <h1> Top Heroes</h1>
+    </mat-list-item>
+    <!-- <mat-divider></mat-divider> -->
+    <mat-grid-list 
+       cols="4" 
+       rowHeight="2:3"
+       gutterSize="20px"
+       >
+      <a *ngFor="let hero of heroes"
+            routerLink="/detail/{{hero.id}}">
+        <mat-grid-tile class="flex-item"
+          [style.background]="'accent'">
+          <mat-grid-tile-header>Top Heroes</mat-grid-tile-header>
+          {{hero.name}}
+        </mat-grid-tile>
+      </a>
+    </mat-grid-list>
+      <!-- <div class="grid grid-pad flex-container">
+        <a *ngFor="let hero of heroes" class="col-1-4"
+            routerLink="/detail/{{hero.id}}">
+          <div class="flex-item">
+            <h4>{{hero.name}}</h4>
+          </div>
+        </a>
+      </div> -->
+
+  </mat-list>
+</mat-card>
 </section>
 <app-hero-search></app-hero-search>
 

@@ -6,8 +6,9 @@
 </nav> -->
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-      <a routerLink="/dashboard">Dashboard</a>
-      <a routerLink="/heroes">Heroes</a>
+      <button mat-button routerLink="/dashboard" routerLinkActive="active" >Dashboard</button>
+      <button mat-button routerLink="/heroes"
+      routerLinkActive="active" >Heroes</button>
   </mat-toolbar-row>
 </mat-toolbar>
 <router-outlet></router-outlet>

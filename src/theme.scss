@@ -18,6 +18,12 @@ $custom-typography: mat-typography-config(
 );
 @include angular-material-typography($custom-typography);
 
+
+// Create your Sass color vars (will be available in all the project)
+// $primary: mat-color($app-primary);
+// $accent: mat-color($app-accent);
+// $warn: mat-color($app-warn);
+
 body { 
   margin: 2em;
 }
@@ -25,3 +31,7 @@ body {
 .basic-container {
   padding: 30px;
 }
+
+// .active {
+//   color: $primary
+// }
