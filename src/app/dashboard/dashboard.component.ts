@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { Component, OnInit /*, Input, ViewChild, ElementRef*/ } from '@angular/core';
+//import { FormBuilder, FormGroup } from '@angular/forms';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 import { Hero2Service } from '../hero-v2.service';
@@ -11,17 +11,17 @@ import { Hero2Service } from '../hero-v2.service';
 })
 export class DashboardComponent implements OnInit {
   heroes: Hero[] = [];
-  options: FormGroup;
+  //options: FormGroup;
   isReactiveView: boolean = false;
 
   constructor(
     private heroService: HeroService,
     private hero2Service: Hero2Service, 
-    private fb: FormBuilder
+    //private fb: FormBuilder
     ) {
-      this.options = fb.group({
-      matView: '1'
-    });
+      //this.options = fb.group({
+      // matView: '1'
+      //});
   }
 
   ngOnInit() {
