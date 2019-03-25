@@ -18,53 +18,53 @@
         </mat-radio-group>
     </mat-card-content>
   </mat-card>
-<!-- </mat-card>
- 
-<mat-card > -->
+
  <hr class="seperator" >
 
-<ng-container *ngIf="!isReactiveView" >
-  <mat-list>
-    <mat-list-item>
-      <h1> Top Heroes</h1>
-    </mat-list-item>
-    <mat-grid-list 
-       cols="4" 
-       rowHeight="2:3"
-       gutterSize="20px" 
-       >
-      <a *ngFor="let hero of heroes"
-            routerLink="/detail/{{hero.id}}">
-        <mat-grid-tile class="hero-item"
-          [style.background]="'accent'">
-          <mat-grid-tile-header>Top Heroes</mat-grid-tile-header>
-          {{hero.name}}
-        </mat-grid-tile>
-      </a>
-    </mat-grid-list>
-  </mat-list>
-</ng-container>
-<!-- </mat-card>
+  <ng-container 
+    *ngIf="!isReactiveView then MatListView else FlexView" >
+  </ng-container>
 
-<mat-card> -->
-<ng-container *ngIf="isReactiveView">
-  <mat-card-title>Top Heroes</mat-card-title>
-  <mat-card-content>
-    <div fxLayout="row wrap" 
-         fxLayout.xs="column" 
-         fxLayoutAlign="space-around center"
-         fxFlexFill>
-      <button 
-          mat-raised-button 
-          color="primary"
-          *ngFor="let hero of heroes" 
-          class="flex-button"
-          routerLink="/detail/{{hero.id}}">
-        {{hero.name}}
-      </button>
-    </div>
-  </mat-card-content>  
-</ng-container>
+  <ng-template #MatListView>
+    <mat-list>
+      <mat-list-item>
+        <h1> Top Heroes</h1>
+      </mat-list-item>
+      <mat-grid-list 
+        cols="4" 
+        rowHeight="2:3"
+        gutterSize="20px" 
+        >
+        <a *ngFor="let hero of heroes"
+              routerLink="/detail/{{hero.id}}">
+          <mat-grid-tile class="hero-item"
+            [style.background]="'accent'">
+            <mat-grid-tile-header>Top Heroes</mat-grid-tile-header>
+            {{hero.name}}
+          </mat-grid-tile>
+        </a>
+      </mat-grid-list>
+    </mat-list>
+  </ng-template>
+
+  <ng-template #FlexView>
+    <mat-card-title>Top Heroes</mat-card-title>
+    <mat-card-content>
+      <div fxLayout="row wrap" 
+          fxLayout.xs="column" 
+          fxLayoutAlign="space-around center"
+          fxFlexFill>
+        <button 
+            mat-raised-button 
+            color="primary"
+            *ngFor="let hero of heroes" 
+            class="flex-button"
+            routerLink="/detail/{{hero.id}}">
+          {{hero.name}}
+        </button>
+      </div>
+    </mat-card-content>  
+  </ng-template>
 
 </mat-card>
 
