@@ -1,3 +1,41 @@
+
+// non reactive view Css
+.hero-item{
+  
+  //padding: 20px;
+  // width: 80px;
+  // height: 80px;
+	// line-height: 80px;
+  border-radius: 12px;
+
+  text-align: center;
+	//font-size:  15px;
+  color: #eee;
+  background-color: #607D8B;
+  
+ }
+
+//reactive view css - using angular-flex
+
+.flex-container{
+  display: flex;
+  flex-direction: row wrap;
+ }
+
+ .flex-button{
+   margin: 1rem 1rem 0 0;
+   min-width: 160px;
+ }
+
+  //option button styling
+ .mat-swith-view{
+   margin: 0.5rem;
+ }
+
+ .seperator{
+   margin : 2rem;
+ }
+
 /* DashboardComponent's private CSS styles */
 // [class*='col-'] {
 //   float: left;
@@ -62,26 +100,6 @@
 //   }
 // }
 
-.flex-container{
-   display: flex; 
-	 flex-flow: row wrap; 
- }
-
-.flex-item{
-  
-  //padding: 20px;
-
-  // width: 80px;
-  // height: 80px;
-	// line-height: 80px;
-  border-radius: 12px;
-
-  text-align: center;
-	//font-size:  15px;
-  color: #eee;
-  background-color: #607D8B;
-  
- }
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that

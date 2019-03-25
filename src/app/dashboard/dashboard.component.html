@@ -1,36 +1,76 @@
 <section class="mat-typography">
 
-<mat-card >
+<mat-card>
+  <mat-card class="mat-elevation-z8 mat-swith-view">
+    <mat-card-subtitle>Switch view implementation</mat-card-subtitle>
+    <mat-card-content>
+      <form [formGroup]="options">
+        <mat-radio-group formControlName='matView'>
+          <mat-radio-button 
+            (click)="toggleReactiveView()"
+            class="mat-swith-view"
+            value="1">
+            Mat-Grid-list implementation</mat-radio-button>
+          <mat-radio-button 
+            (click)="toggleReactiveView()"
+            class="mat-swith-view"
+            value="2">
+            Mat-card and Angular flex (better: reacts on screen size)</mat-radio-button>
+        </mat-radio-group>
+      </form>
+    </mat-card-content>
+  </mat-card>
+<!-- </mat-card>
+ 
+<mat-card > -->
+ <hr class="seperator" >
+
+<ng-container *ngIf="!isReactiveView" >
   <mat-list>
     <mat-list-item>
       <h1> Top Heroes</h1>
     </mat-list-item>
-    <!-- <mat-divider></mat-divider> -->
     <mat-grid-list 
        cols="4" 
        rowHeight="2:3"
-       gutterSize="20px"
+       gutterSize="20px" 
        >
       <a *ngFor="let hero of heroes"
             routerLink="/detail/{{hero.id}}">
-        <mat-grid-tile class="flex-item"
+        <mat-grid-tile class="hero-item"
           [style.background]="'accent'">
           <mat-grid-tile-header>Top Heroes</mat-grid-tile-header>
           {{hero.name}}
         </mat-grid-tile>
       </a>
     </mat-grid-list>
-      <!-- <div class="grid grid-pad flex-container">
-        <a *ngFor="let hero of heroes" class="col-1-4"
-            routerLink="/detail/{{hero.id}}">
-          <div class="flex-item">
-            <h4>{{hero.name}}</h4>
-          </div>
-        </a>
-      </div> -->
-
   </mat-list>
+</ng-container>
+<!-- </mat-card>
+
+<mat-card> -->
+<ng-container *ngIf="isReactiveView">
+  <mat-card-title>Top Heroes</mat-card-title>
+  <mat-card-content>
+    <div fxLayout="row wrap" 
+         fxLayout.xs="column" 
+         fxLayoutAlign="space-around center"
+         fxFlexFill>
+      <button 
+          mat-raised-button 
+          color="primary"
+          *ngFor="let hero of heroes" 
+          class="flex-button"
+          routerLink="/detail/{{hero.id}}">
+        {{hero.name}}
+      </button>
+    </div>
+  </mat-card-content>  
+</ng-container>
+
 </mat-card>
+
+
 </section>
 <app-hero-search></app-hero-search>
 
