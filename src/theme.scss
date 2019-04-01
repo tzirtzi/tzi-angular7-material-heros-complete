@@ -32,3 +32,15 @@ body {
   padding: 30px;
 }
 
+// for switching themes:
+.dark-theme {
+  @include angular-material-theme(
+    mat-dark-theme($app-primary, $app-accent, $app-warn)
+  );
+}
+
+.light-theme {
+  @include angular-material-theme(
+    mat-light-theme($app-primary, $app-accent, $app-warn)
+  );
+}
