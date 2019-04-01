@@ -7,16 +7,19 @@
         <mat-radio-group >
           <mat-radio-button 
             (click)="toggleReactiveView()"
-            class="mat-swith-view"
+            class="mat-switch-view"
             value="1" checked="true">
-            Mat-Grid-list implementation</mat-radio-button>
+             Mat-Grid-list implementation</mat-radio-button>
           <mat-radio-button 
             (click)="toggleReactiveView()"
-            class="mat-swith-view"
+            class="mat-switch-view"
             value="2">
-            Mat-card and Angular flex (better: reacts on screen size)</mat-radio-button>
+            Mat-card and Angular flex*</mat-radio-button>
         </mat-radio-group>
     </mat-card-content>
+    <mat-card-footer class="mat-footer">
+      * better: reacts on screen size
+    </mat-card-footer>
   </mat-card>
 
  <hr class="seperator" >

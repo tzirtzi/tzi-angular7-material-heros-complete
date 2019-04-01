@@ -13,8 +13,8 @@ $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
 // Define a custom typography config.
 $custom-typography: mat-typography-config(
   $font-family: 'Open Sans, Arial, sans-serif',
-  $headline: mat-typography-level(32px, 48px, 700)
-  //$body-1: mat-typography-level(16px, 24px, 500)
+  $headline: mat-typography-level(32px, 48px, 700),
+  $body-1: mat-typography-level(14px, 24px, 500)
 );
 @include angular-material-typography($custom-typography);
 
